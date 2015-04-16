@@ -23,12 +23,6 @@
 	    @Html.ValidationMessageFor(x => x.SelectedLanguages)
         </p>
     
-        <p>
-        @Html.LabelFor(x => x.SelectedNumbers, "Select your favourite numbers.")
-        @Html.CheckBoxListFor(x => x.SelectedNumbers, x => x.NumberOptions, new Dictionary<string, object> { { "@class", "test" } })
-	    @Html.ValidationMessageFor(x => x.SelectedNumbers)
-        </p>
-    
 	    <p>
 	    <button type='submit'>Submit</button>
 	    </p>

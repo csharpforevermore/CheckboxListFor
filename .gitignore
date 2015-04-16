@@ -1,0 +1,7 @@
+*.user
+.git
+*.suo
+obj
+packages
+bin
+_ReSharperPlatformVs121

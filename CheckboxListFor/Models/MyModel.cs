@@ -27,8 +27,5 @@ namespace CheckboxListFor.Models
 		public IList<MyType> SelectedLanguages { get; set; }
 		public Dictionary<MyType, string> LanguageOptions { get; set; }
 
-        [RequiredCheckbox(1)]
-        public IList<int> SelectedNumbers { get; set; }
-        public Dictionary<int, string> NumberOptions { get; set; }
 	}
 }
