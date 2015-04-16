@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
 
@@ -27,10 +25,10 @@ namespace CheckboxListFor.Extensions
 
             var model = metadata.Model as IEnumerable<TOption>;
 
-            Dictionary<TOption, string> listOfOptions = null;
+            Dictionary<TOption, string> listOfOptions;
             if (typeof(TOption).BaseType == typeof(Enum) && listOfOptionsExpression == null)
             {
-                listOfOptions = Enum.GetValues(typeof(TOption)).Cast<TOption>().ToDictionary(t => (TOption)t, t => t.ToString());
+                listOfOptions = Enum.GetValues(typeof(TOption)).Cast<TOption>().ToDictionary(t => t, t => t.ToString());
             }
             else
             {
@@ -40,8 +38,8 @@ namespace CheckboxListFor.Extensions
                 int i = 0;
                 foreach (var item in listOfOptions)
                 {
-                    innerhtml = innerhtml + htmlHelper.Hidden(string.Format("{0}[{1}].Key", metadatalistOfOptions.PropertyName, i.ToString()), item.Key);
-                    innerhtml = innerhtml + htmlHelper.Hidden(string.Format("{0}[{1}].Value", metadatalistOfOptions.PropertyName, i.ToString()), item.Value);
+                    innerhtml = innerhtml + htmlHelper.Hidden(string.Format("{0}[{1}].Key", metadatalistOfOptions.PropertyName, i), item.Key);
+                    innerhtml = innerhtml + htmlHelper.Hidden(string.Format("{0}[{1}].Value", metadatalistOfOptions.PropertyName, i), item.Value);
                     i ++;
                 }
 
