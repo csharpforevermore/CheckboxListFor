@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace CheckboxListFor.Extensions
 {
-	[AttributeUsage(AttributeTargets.Property, Inherited = true)]
+	[AttributeUsage(AttributeTargets.Property)]
 	public class RequiredCheckboxAttribute : ValidationAttribute, IClientValidatable
 		{
 			public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
